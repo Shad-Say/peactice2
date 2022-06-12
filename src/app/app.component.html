@@ -1,4 +1,17 @@
 <main>
-  <app-left (sendParent)="putOnLeft(7)"> </app-left>
-  <app-right></app-right>
+  <app-left
+    [leftValue]="counterLeft"
+    (incrementRight)="incrementRightCounter()"
+  >
+    <!-- leftValue comes from left child and counterLeft comes from app -->
+    <!-- incrementRight comes from left child and incrementRightCounter is a function defined in app -->
+  </app-left>
+
+  <app-right
+    [rightValue]="counterRight"
+    (incrementLeft)="incrementLeftCounter()"
+  >
+    <!-- rightValue comes from right child and counterRight comes from app -->
+    <!-- incrementLeft comes from left child and incrementLeftCounter is a function defined in app -->
+  </app-right>
 </main>

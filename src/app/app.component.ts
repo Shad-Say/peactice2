@@ -1,5 +1,5 @@
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { LeftComponent } from './left/left.component';
 
 @Component({
@@ -9,11 +9,14 @@ import { LeftComponent } from './left/left.component';
 })
 export class AppComponent {
   title = 'practice2';
-  counterLeft = 0;
+  @Output() counterLeft = 0; // Passes From Parent to Child Left
+  @Output() counterRight = 0; // Passes From Parent to Child Right
 
-  putOnLeft(digit: number) {
-    this.counterLeft = digit;
-    console.log(digit);
-    return this.counterLeft;
+  incrementRightCounter() {
+    this.counterRight += 1;
+  }
+
+  incrementLeftCounter() {
+    this.counterLeft += 1;
   }
 }

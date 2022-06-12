@@ -1,2 +1,4 @@
-<h3>{{ counterRight }}</h3>
-<button type="button" (click)="rightButtonClicked(5)">Increment to left</button>
+<h3>{{ rightValue }}</h3>
+<button type="button" (click)="incrementLeft.emit(rightValue)">
+  Increment to left
+</button>

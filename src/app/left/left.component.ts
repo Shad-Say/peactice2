@@ -6,7 +6,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./left.component.css'],
 })
 export class LeftComponent {
-  @Input() counterLeft = 0;
-
-  // onChangeLeft() {}
+  @Input() leftValue = 0; 
+  @Output() incrementRight = new EventEmitter<number>();
 }
